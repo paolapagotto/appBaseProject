@@ -16,4 +16,5 @@ protocol CoordinatorProtocol: AnyObject {
     func popToRoot()
     func dismissSheet()
     func dismissFullScreenCover()
+    func presentAlert<T>(_ alert: T) where T: AlertDisplayableProtocol
 }

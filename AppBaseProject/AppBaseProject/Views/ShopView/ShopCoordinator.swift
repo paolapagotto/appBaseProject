@@ -11,6 +11,7 @@ class ShopCoordinator: CoordinatorProtocol, ObservableObject {
     @Published var path: NavigationPath = NavigationPath()
     @Published var sheetPath: NavigationPath = NavigationPath()
     @Published var coverPath: NavigationPath = NavigationPath()
+    @Published var alertPath: AlertPath = AlertPath()
     @Published var isPresentingCover: Bool = false
     @Published var isPresentingSheet: Bool = false
     @Published var appRoot: AppRoot = .initial
@@ -85,4 +86,7 @@ class ShopCoordinator: CoordinatorProtocol, ObservableObject {
         self.coverPath.removeLast(coverPath.count)
     }
     
+    func presentAlert<T>(_ alert: T) where T: AlertDisplayableProtocol {
+        alertPath.setAlert(alert)
+    }
 }

@@ -55,5 +55,11 @@ struct BaseView: View {
                     })
             }
         }
+        .onChange(of: viewModel.coordinator.appRoot, {
+            viewModel.coordinator.popToRoot()
+        })
+        .alert(for: $viewModel.coordinator.alertPath)
+        .accentColor(.teal)
+        .environmentObject(viewModel.coordinator)
     }
 }

@@ -35,6 +35,6 @@ struct TabBarView: View {
                     .padding(.bottom, 16)
             }
         }
-        .accentColor(.red)
+        .accentColor(.teal)
     }
 }
